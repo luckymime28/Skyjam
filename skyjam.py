@@ -1,11 +1,6 @@
 x = 0
 def help():
-    print("- So basically this is my first ever exploit I created")
-    print("- My name is luckymime28 and this is my exploit skyjam.py")
-    print("- skyjam.py is a password combination maker and password list creator")
-    print("- Simply follow the instructions on screen and you should be fine")
-    print("- Any questions? ask via instagram luckymime28, sorry if I take a while")
-    print("Again, to begin, how old is the person? select a letter.")
+    print("-So basically, this is my first exploit I ever created \n-My name is luckymime28, and this is my exploit skyjam.py \n-skyjam.py is a password combination maker and list creator \n-Simply follow the instructions on screen and you should be fine \n-Any questions? Ask via instagram luckymime28, sorry if I take a while.")
 print("- if you need more info or you're confused type 'help'")
 print("To begin, how old is the person?")
 while x == 0:
