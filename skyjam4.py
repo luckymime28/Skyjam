@@ -7,17 +7,17 @@ def Male():
     name2 = input("What would you like to name your .txt?: ")
     #DO NOT ADD '.TXT' AT THE END OF THE NAME, IT'S ALREADY AUTOMATICALLY ADDED!
     jam = open(f"/home/{name}/Desktop/{name2}.txt", "w")
-    jam.write(ask2 + ask3 + ask4)
-    jam.write(ask2.lower() + ask3.lower() + ask4.lower())
-    jam.write(ask4 + ask3 + ask2)
-    jam.write(ask2.upper() + ask3.upper() + ask4.upper())
-    jam.write(ask3.upper() + ask4.upper() + ask2.upper())
+    jam.write(ask2 + ask3 + ask4+"\n")
+    jam.write(ask2.lower() + ask3.lower() + ask4.lower()+"\n")
+    jam.write(ask4 + ask3 + ask2+"\n")
+    jam.write(ask2.upper() + ask3.upper() + ask4.upper()+"\n")
+    jam.write(ask3.upper() + ask4.upper() + ask2.upper()+"\n")
     for x in range(10000):
         x = str(x)
-        jam.write(x + ask2 + ask3 + ask4 + x)
-        jam.write(x + ask2.upper() + ask3.upper() + ask4.upper() + x)
-        jam.write(x + ask2.lower() + ask3.lower() + ask4.lower() + x)
-        jam.close()
+        jam.write(x + ask2 + ask3 + ask4 + x+"\n")
+        jam.write(x + ask2.upper() + ask3.upper() + ask4.upper() + x+"\n")
+        jam.write(x + ask2.lower() + ask3.lower() + ask4.lower() + x+"\n")
+    jam.close()
 def Female():
     print("Also worked")
 
