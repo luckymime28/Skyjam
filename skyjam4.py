@@ -1,35 +1,141 @@
-x = 1
-def Male():
-    ask2 = input("First interest: ")
-    ask3 = input("Second interest: ")
-    ask4 = input("Third interest: ")
-    name = input("What is the name on your system?: ")
-    name2 = input("What would you like to name your .txt?: ")
-    #DO NOT ADD '.TXT' AT THE END OF THE NAME, IT'S ALREADY AUTOMATICALLY ADDED!
-    jam = open(f"/home/{name}/Desktop/{name2}.txt", "w")
-    jam.write(ask2 + ask3 + ask4+"\n")
-    jam.write(ask2.lower() + ask3.lower() + ask4.lower()+"\n")
-    jam.write(ask4 + ask3 + ask2+"\n")
-    jam.write(ask2.upper() + ask3.upper() + ask4.upper()+"\n")
-    jam.write(ask3.upper() + ask4.upper() + ask2.upper()+"\n")
-    for x in range(10000):
-        x = str(x)
-        jam.write(x + ask2 + ask3 + ask4 + x+"\n")
-        jam.write(x + ask2.upper() + ask3.upper() + ask4.upper() + x+"\n")
-        jam.write(x + ask2.lower() + ask3.lower() + ask4.lower() + x+"\n")
-    jam.close()
-def Female():
-    print("Also worked")
+def help():
+    print("-Follow the directions to create your own password generator\n-If you want to add an alternate directory because both\n preset directtories aren't working, type 'change'\n when it wasks what system you're using to input your own!")
+def Jam():
+    try:
+        print("Follow the directions, or type 'help' for other\ntypes of options if there are issues.")
+        ask = input("otherwise type 'continue' to continue: ")
+        if ask.lower() == 'help':
+            help()
+        p = input("First interest: ")
+        p2 = input("Second interest: ")
+        p3 = input("Third interest: ")
+        system = input("Are you using Windows or Kali? [K/W]: ")
+        if system.lower() == 'change':
+            pass
+        if system.lower() != 'change':
+            name = input("What is the name on your system?: ")
+            name2 = input("What would you like to name your .txt?: ")
+        if system.lower() == 'k':
+            jam = open(f"/home/{name}/Desktop/{name2}.txt", "w")
+        elif system.lower() == 'w':
+            jam = open(f"C:/Users/{name}/Desktop/{name2}.txt", "w")
+        if system.lower() == 'change':
+            change = input("Type your alternate directory here\nRemember to include the name for your file\n>>")
+            jam = open(f"{change}", "w")
+        p = p.lower()
+        p2 = p2.lower()
+        p3 = p3.upper()
+        P = p.upper()
+        P2 = p2.upper()
+        P3 = p3.upper()
+        r = p[::-1]
+        r2 = p2[::-1]
+        r3 = p3[::-1]
+        R = P[::-1]
+        R2 = P2[::-1]
+        R3 = P3[::-1]
+        jam.write(r + r2 + r3+ "\n")
+        jam.write(r + r3 + r2+ "\n")
+        jam.write(r2 + r3 + r+ "\n")
+        jam.write(r3 + r + r2+ "\n")
+        jam.write(r2 + r + r3+ "\n")
+        jam.write(r3 + r2 + r+ "\n")
 
-print("The person you're targetting is 51+")
-print("Type 'back' to go back to the main screen.")
-while x == 1:
-    askk = input("Are they Male or Female?: ")
-    if askk == "m" or "male":
-        x = x + 1
-        Male()
-    if askk == 'help':
-        x = x + 1
-    else:
-        print("Completed Successfully!")
+        jam.write(R + r2 + r3+ "\n")
+        jam.write(R + r3 + r2+ "\n")
+        jam.write(r2 + r3 + r+ "\n")
+        jam.write(r3 + R + r2+ "\n")
+        jam.write(r2 + R + r3+ "\n")
+        jam.write(r3 + r2 + R+ "\n")
+
+        jam.write(r + R2 + r3+ "\n")
+        jam.write(r + r3 + R2+ "\n")
+        jam.write(R2 + r3 + r+ "\n")
+        jam.write(r3 + r + R2+ "\n")
+        jam.write(R2 + r + r3+ "\n")
+        jam.write(r3 + R2 + r+ "\n")
+
+        jam.write(r + r2 + R3+ "\n")
+        jam.write(r + R3 + r2+ "\n")
+        jam.write(r2 + R3 + r+ "\n")
+        jam.write(R3 + r + r2+ "\n")
+        jam.write(r2 + r + R3+ "\n")
+        jam.write(R3 + r2 + r+ "\n")
+
+        jam.write(R + R2 + r3+ "\n")
+        jam.write(R + r3 + R2+ "\n")
+        jam.write(R2 + r3 + R+ "\n")
+        jam.write(r3 + R + R2+ "\n")
+        jam.write(R2 + R + r3+ "\n")
+        jam.write(r3 + R2 + R+ "\n")
+
+        jam.write(R + r2 + R3+ "\n")
+        jam.write(R + R3 + r2+ "\n")
+        jam.write(r2 + R3 + R+ "\n")
+        jam.write(R3 + R + r2+ "\n")
+        jam.write(r2 + R + R3+ "\n")
+        jam.write(R3 + r2 + R+ "\n")
+
+        jam.write(r + R2 + R3+ "\n")
+        jam.write(r + R3 + R2+ "\n")
+        jam.write(R2 + R3 + r+ "\n")
+        jam.write(R3 + r + R2+ "\n")
+        jam.write(R2 + r + R3+ "\n")
+        jam.write(R3 + R2 + r+ "\n")
+
+        jam.write(R + R2 + R3+ "\n")
+        jam.write(R + R3 + R2+ "\n")
+        jam.write(R2 + R3 + R+ "\n")
+        jam.write(R3 + R + R2+ "\n")
+        jam.write(R2 + R + R3+ "\n")
+        jam.write(R3 + R2 + R+ "\n")
+        jam.write(r + r3 + r2+ "\n")
+        jam.write(p + p2 + p3+"\n")
+        jam.write(p + p2 + p3+"\n")
+        jam.write(p3 + p2 + p+"\n")
+        jam.write(P + P2 + P3+"\n")
+        jam.write(P2 + P3 + P+"\n")
+        for x in range(10000):
+            x = str(x)
+            jam.write(x + p + p2 + p3 + "\n")
+            jam.write(x + p + x + p2 + p3 + "\n")
+            jam.write(x + p + x + p2 + x + p3 + "\n")
+            jam.write(x + p + x + p2 + x + p3 + x + "\n")
+            jam.write(p + x + p2 + x + p3 + x + "\n")
+            jam.write(p + p2 + x + p3 + x + "\n")
+            jam.write(p + p2 + p3 + x + "\n")
+            jam.write(x + p2 + p3 + p + "\n")
+            jam.write(x + p2 + x + p3 + p + "\n")
+            jam.write(x + p2 + x + p3 + x + p + "\n")
+            jam.write(x + p2 + x + p3 + x + p + x + "\n")
+            jam.write(p2 + x + p3 + x + p + x + "\n")
+            jam.write(p2 + p3 + x + p + x + "\n")
+            jam.write(p2 + p3 + p + x +"\n")
+            jam.write(x + p3 + p2 + p + "\n")
+            jam.write(x + p3 + x + p2 + p + "\n")
+            jam.write(x + p3 + x + p2 + x + p + "\n")
+            jam.write(x + p3 + x + p2 + x + p + x + "\n")
+            jam.write(p3 + x + p2 + x + p + x + "\n")
+            jam.write(p3 + p2 + x + p + x + "\n")
+            jam.write(p3 + p2 + p + x + "\n")
+            jam.write(x + p2 + p + p3 + "\n")
+            jam.write(x + p2 + x + p + p3 + "\n")
+            jam.write(x + p2 + x + p + x + p3 + "\n")
+            jam.write(x + p2 + x + p + x + p3 + x + "\n")
+            jam.write(p2 + x + p + x + p3 +x + "\n")
+            jam.write(p2 + p + x + p3 + x + "\n")
+            jam.write(p2 + p + p3 + x + "\n")
+            jam.write(x + p3 + p + p2 + "\n")
+            jam.write(x + p3 + x + p + p2 + "\n")
+            jam.write(x + p3 + x + p + x +p2 + "\n")
+            jam.write(x + p3 + x + p + x + p2 + x + "\n")
+            jam.write(p3 + x + p + x + p2 + x + "\n")
+            jam.write(p3 + p + x + p2 + x + "\n")
+            jam.write(p3 + p + p2 + p3 + x + "\n")
+    except FileNotFoundError or UnboundLocalError:
+        print("Your directory wasn't found\nDid you input the correct system?")
         quit()
+    jam.close()
+    print("[SUCCESS] Check your Desktop/Directory to see your list!")
+    quit()
+Jam()
