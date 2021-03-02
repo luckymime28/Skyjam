@@ -1,4 +1,4 @@
-Skyjam V1.1
+Skyjam V1.2
 my code sucks I come back to this project every so often
 Simple Password Maker, to try different combinations instead of picking each single type of password. 
 To get it started, just follow the directions, insert 3 interests (or 1 and press enter when it asks you again)
