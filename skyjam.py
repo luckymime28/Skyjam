@@ -1,22 +1,13 @@
 x = 0
 def help():
-    print("-So basically, this is my first exploit I ever created \n-My name is luckymime28, and this is my exploit skyjam.py \n-skyjam.py is a password combination maker and list creator \n-Simply follow the instructions on screen and you should be fine \n-Any questions? Ask via instagram luckymime28, sorry if I take a while.")
+    print("-So basically, this is my first exploit I ever created \n-My name is luckymime28, and this is my exploit skyjam.py \n-skyjam.py is a password combination maker and list creator \n-Simply follow the instructions on screen and you should be fine \n-Any questions? Ask via instagram luckymime28, sorry if I take a while.\nAlso I am in no way, shape, or form responsible if any damages occur from\nyou using my product.")
 print("- if you need more info or you're confused type 'help'")
-print("To begin, how old is the person?")
 while x == 0:
-    ask = input("A.12-20 B.21-35 C.36-50 D.51+: ")
-    ask = ask.lower()
-    if ask == "a":
-        print("I'll work on that in the future, too advanced :)")
-    if ask == "b":
-        print("I'll need to work on that one aswell, sorry :(")
-    if ask == "c":
-        print("Don't expect much")
-    if ask == "d":
-        x = x + 1
+    con = input("Type 'a' To continue to the Exploit\n> ")
+    if con.lower() == 'a':
         import skyjam4
         quit()
-    if ask == "help":
+    elif con.lower() == 'help':
         help()
     else:
-        print("Choose a letter dummy :)")
+        print("That didn't work, type 'a' to continue\nor type 'help' for help.")
