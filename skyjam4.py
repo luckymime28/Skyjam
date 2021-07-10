@@ -1,4 +1,7 @@
+print("\n LEVEL 1 \n")
 a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z = "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"
+import getpass
+user = getpass.getuser()
 def feedback():
     return "[SUCCESS] Check your Desktop/Directory to see your list!"
 def help():
@@ -191,24 +194,38 @@ try:
     p2 = input("Second interest: ")
     p3 = input("Third interest: ")
     system = input("Are you using Windows or Kali? [K/W]: ")
-    if system.lower() == 'change':
-        pass
-    if system.lower() != 'change':
+    if system.lower() != 'change' and system.lower() == 'k':
         name = input("What is the name on your system?: ")
-        name2 = input("What would you like to name your .txt?: ")
+    name2 = input("What would you like to name your .txt?\nRefrain from using special characters!!: ")
     if system.lower() == 'k':
         jam = open(f"/home/{name}/Desktop/{name2}.txt", "w")
     elif system.lower() == 'w':
-        jam = open(f"C:/Users/{name}/Desktop/{name2}.txt", "w")
+        try:
+            jam = open(f"C:/Users/{user}/Onedrive/Desktop/{name2}.txt", "w")
+        except FileNotFoundError:
+            try:
+                jam = open(f"C:/users/{user}/Desktop/{name2}.txt", 'w')
+            except OSError:
+                print("DO NOT ADD SPECIAL CHARACTERS TO YOUR .TXT!!!\nRERUN THE PROGRAM!!!")
+                quit()
     if system.lower() == 'change':
         change = input("\nTYPE IN YOUR ALTERNATE DIRECTORY HERE\nREMEMBER TO INCLUDE THE NAME OF YOUR FILE AND ITS EXTENSION\nDO NOT INCLUDE ANY QUOTATION MARKS!!!\n>>>")
         jam = open(f"{change}", "w")
     if p and p2 and p3 != "":
-        Three_Interests(jam, p, p2, p3)
+        try:
+            Three_Interests(jam, p, p2, p3)
+        except NameError:
+            print("Your Directory Was Lost\nTry rerunning the program!!!")
     elif p and p2 != "":
-        Two_Interests(jam, p, p2)
+        try:
+            Two_Interests(jam, p, p2)
+        except NameError:
+            print("Your Directory Was Lost\nTry rerunning the program!!!")
     elif p != "":
-        One_Interest(jam, p)
-except FileNotFoundError or UnboundLocalError:
+        try:
+            One_Interest(jam, p)
+        except NameError:
+            print("Your Directory Was Lost\nTry rerunning the program!!!")
+except FileNotFoundError or UnboundLocalError or NameError:
     print("Your directory wasn't found\nDid you input the correct system?")
     quit()
