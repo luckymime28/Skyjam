@@ -160,7 +160,7 @@ try:
     #p2 = input("Second Word > ")
     #p3 = input("Third Word > ")
     Sys = input("Are you currently using Windows or Kali?[K/W] > ")
-    name2 = input("What would you like to name your .txt? > ")
+    name2 = input("Refrain from using special characters.\nWhat would you like to name your .txt? > ")
     if Sys.lower() == 'change':
         change = input("\nTYPE IN YOUR ALTERNATE DIRECTORY HERE\nREMEMBER TO INCLUDE THE NAME OF YOUR FILE AND ITS EXTENSION\nDO NOT INCLUDE ANY QUOTATION MARKS!!!\n>> ")
         jam = open(f"{change}", "w")
