@@ -194,7 +194,7 @@ try:
     p2 = input("Second interest: ")
     p3 = input("Third interest: ")
     system = input("Are you using Windows or Kali? [K/W]: ")
-    name2 = input("What would you like to name your .txt?\nRefrain from using special characters!!: ")
+    name2 = input("Refrain from using special characters.\nWhat would you like to name your .txt?: ")
     if system.lower() == 'k':
         jam = open(f"/home/{user}/Desktop/{name2}.txt", "w")
     elif system.lower() == 'w':
