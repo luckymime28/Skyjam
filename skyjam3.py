@@ -1,10 +1,9 @@
-print("\nLEVEL 2\n")
+print("\n-LEVEL 2-\n")
 import getpass
 user = getpass.getuser()
 n = '\n'
 letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-def feedback():
-    return "[SUCCESS] Check your Desktop/Directory to see your list!"
+feedback = lambda : print("[SUCCESS] Check your Desktop/Directory to see your list!")
 def Every_Other(p):
     p2 = ""
     capitalize = True
@@ -147,23 +146,41 @@ def Numbered_Words(p):
                 jam.write(p + x + let + n)
                 jam.write(p + x + let + x + n)
     jam.close()
-    print(feedback())
+    feedback()
     quit()
-def help():
-    print("\n- Follow the directions to create your own password list\n- If you want or need to add an alternate directory,\n- Type 'change' once it asks what OS you're using!\n")
+help = lambda : print("\n- Follow the directions to create your own password list\n- If you want or need to add an alternate directory,\n- Type 'change' once it asks what OS you're using!\n")
 try:
     print("Follow the directions, or type 'help' for other\ntypes of options if there are issues.")
     ask = input("Otherwise push Enter to continue: ")
     if ask.lower() == 'help':
         help()
-    p = input("First Word > ")
-    #p2 = input("Second Word > ")
-    #p3 = input("Third Word > ")
+    p = input("Your Word > ")
     Sys = input("Are you currently using Windows or Kali?[K/W] > ")
-    name2 = input("Refrain from using special characters.\nWhat would you like to name your .txt? > ")
+    if Sys.lower() != 'change':
+        name2 = input("Refrain from using special characters.\nWhat would you like to name your .txt? > ")
+        if name2.lower() == '':
+            print("Something went wrong! Rerun program!!")
+            quit()
+    if Sys.lower() == "":
+        print("Something went wrong! Rerun program!!")
+        quit()
     if Sys.lower() == 'change':
-        change = input("\nTYPE IN YOUR ALTERNATE DIRECTORY HERE\nREMEMBER TO INCLUDE THE NAME OF YOUR FILE AND ITS EXTENSION\nDO NOT INCLUDE ANY QUOTATION MARKS!!!\n>> ")
-        jam = open(f"{change}", "w")
+        try:
+            change = input("\nTYPE IN YOUR ALTERNATE DIRECTORY HERE\nREMEMBER TO INCLUDE THE NAME OF YOUR FILE AND ITS EXTENSION\nDO NOT INCLUDE ANY QUOTATION MARKS OR SPECIAL CHARACTERS!!!\n>> ")
+            word = (r"\ ")
+            word = word.strip()
+            if change.__contains__("/") or change.__contains__(word) == True:
+                pass
+            else:
+                print("Sorry, your directory wasn't found! Rerun the program!!")
+                quit()
+            jam = open(r"{}".format(change), "w")
+        except FileNotFoundError:
+            print("Sorry your directory wasn't found! Rerun the program!!")
+            quit()
+        except PermissionError:
+            print("Uh Oh, I don't think that's allowed!!!")
+            quit()
     elif Sys.lower() == 'w':
         try:
             jam = open(f"C:/Users/{user}/Onedrive/Desktop/{name2}.txt", 'w')
