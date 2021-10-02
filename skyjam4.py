@@ -4,8 +4,7 @@ import getpass
 user = getpass.getuser()
 def feedback():
     return "[SUCCESS] Check your Desktop/Directory to see your list!"
-def help():
-    print("\n- Follow the directions to create your own password list\n- If you want or need to add an alternate directory,\n- Type 'change' once it asks what OS you're using!\n")
+help = lambda : print("\n- Follow the directions to create your own password list\n- If you want or need to add an alternate directory,\n- Type 'change' once it asks what OS you're using!\n")
 def Three_Interests(jam, p, p2, p3):
     p, p2, p3, P, P2, P3, r, r2, r3, = p.lower(), p2.lower(), p3.lower(), p.upper(), p2.upper(), p3.upper(), p[::-1], p2[::-1], p3[::-1]
     R, R2, R3 = P[::-1], P2[::-1], P3[::-1]
@@ -194,7 +193,11 @@ try:
     p2 = input("Second interest: ")
     p3 = input("Third interest: ")
     system = input("Are you using Windows or Kali? [K/W]: ")
-    name2 = input("Refrain from using special characters.\nWhat would you like to name your .txt?: ")
+    if system.lower() != 'change':
+        name2 = input("Refrain from using special characters.\nWhat would you like to name your .txt?: ")
+    if system.lower() == "" or name2.lower() == '':
+        print("Something went wrong, rerun program!!!")
+        quit()
     if system.lower() == 'k':
         jam = open(f"/home/{user}/Desktop/{name2}.txt", "w")
     elif system.lower() == 'w':
