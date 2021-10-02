@@ -1,4 +1,4 @@
-Skyjam V1.4.1 -Added more features and fixed a couple more bugs. 7/22/21
+Skyjam V1.4.2 -Attempted to fix a couple bugs where there's a broken "loop" and empty .txt filenames-. 10/1/21
 my code sucks, I come back to this project every now and then, I'm imporving though!
 Simple Password Maker, to create a list of passwords for Bruteforcing!
 To get it started, just follow the directions, insert up to 3 interests (To skip, just hit Enter)
